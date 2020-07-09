@@ -1,0 +1,51 @@
+---
+
+- name: "Create keys & Addresses | Check Cardano CLI installed."
+  shell: |
+    which cardano-cli
+  changed_when: false
+  failed_when: cardano_cli_installed.rc not in [0,1]
+  register: cardano_cli_installed
+  become_user: "{{ server_username }}"
+  become: true
+
+- name: "Create keys & Addresses | Return fail if it is not installed"
+  fail:
+    msg: "Cardano CLI is not installed, install first"
+  when: cardano_cli_installed.rc not in [ 0 ]
+
+- name: "Create keys & Addresses | Create required directories"
+  file:
+    path: "/home/{{ server_username }}//{{ item }}"
+    state: directory
+    owner: "{{ server_username }}"
+    group: "{{ server_username }}"
+    mode: 0744
+  with_items:
+    - keys
+
+- name: "Create keys & Addresses | Generate payment keys"
+  shell: |
+    cardano-cli shelley address key-gen \
+      --verification-key-file /home/{{ server_username }}/keys/payment.vkey \
+      --signing-key-file /home/{{ server_username }}/keys/payment.skey
+  become_user: "{{ server_username }}"
+  become: true
+
+- name: "Create keys & Addresses | Generate stake keys"
+  shell: |
+    cardano-cli shelley stake-address key-gen \
+     --verification-key-file /home/{{ server_username }}/keys/stake.vkey \
+     --signing-key-file /home/{{ server_username }}/keys/stake.skey
+  become_user: "{{ server_username }}"
+  become: true
+
+- name: "Create keys & Addresses | Generate payment address"
+  shell: |
+    cardano-cli shelley address build \
+      --payment-verification-key-file /home/{{ server_username }}/keys/payment.vkey \
+      --stake-verification-key-file /home/{{ server_username }}/keys/stake.vkey \
+      --out-file /home/{{ server_username }}/keys/payment.addr \
+      --testnet-magic 42
+  become_user: "{{ server_username }}"
+  become: true

@@ -1,0 +1,26 @@
+galaxy_info:
+  author: Sion Smith
+  role_name: cardano_stake_pool
+  description: "Role to configure a Cardano stake pool"
+  company: "OSO DevOps"
+  license: MIT
+  min_ansible_version: 2.9
+  platforms:
+    - name: Amazon
+      versions:
+        - all
+  galaxy_tags:
+    - cardano
+    - linux
+    - amazon
+    - ada
+    - systemd
+    - development
+    - system
+    - image
+    - box
+    - packer
+    - virtualbox
+    - vagrant
+    - ami
+    - aws

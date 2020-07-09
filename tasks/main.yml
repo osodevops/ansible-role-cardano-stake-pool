@@ -1,0 +1,5 @@
+---
+# Tasks have been split into sections based on the Cardano tutorials https://github.com/input-output-hk/cardano-tutorials
+
+- include: keys_and_addresses.yml
+  tags: keys
