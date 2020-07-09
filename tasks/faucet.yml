@@ -1,0 +1,24 @@
+---
+
+# NOTE: THIS HAS NOW STOPPED WORKING AS DUE TO reCAPTCHA https://testnets.cardano.org/en/shelley/tools/faucet/
+
+- name: "Faucet | Get the payment address"
+  shell: |
+    cat /home/{{ server_username }}/keys/payment.addr
+  register: payment_address
+  become_user: "{{ server_username }}"
+  become: true
+
+- name: "Faucet | Request test ADA from faucet"
+  uri:
+    url: https://faucet.shelley-testnet.dev.cardano.org/send-money/{{ payment_address.stdout }}
+    method: POST
+    status_code: 201
+
+- name: "Faucet | Check the balance"
+  shell: |
+    cardano-cli shelley query utxo \
+      --address $(cat /home/{{ server_username }}/keys/payment.addr) \
+      --testnet-magic 42
+  become_user: "{{ server_username }}"
+  become: true
