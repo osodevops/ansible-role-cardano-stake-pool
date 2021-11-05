@@ -1,0 +1,26 @@
+---
+#
+# This is the canonical configuration for the `README.md`
+# Run `make readme` to rebuild the `README.md`
+#
+
+# Name of this project
+name: "Docker Confluent Platform Ansible"
+
+# Short description of this project
+description: |-
+  This is a docker wrapper for the Confluent supported ansible playbooks! These supported ansible Playbooks for Confluent Platform offers a simple way to configure and deploy Confluent Platform.
+
+# Canonical GitHub repo
+github_repo: osodevops/docker-cp-ansible
+
+related:
+  - name: "CP Ansible"
+    description: "Confluent supported Ansible playbooks"
+    url: "https://github.com/confluentinc/cp-ansible"
+
+# References
+references:
+  - name: "Confluent Platform on Azure"
+    description: 'Terraform Module for deploying best practice HA Confluent Platform on Azure'
+    url: "https://github.com/osodevops/terraform-azure-confluent-platform"
