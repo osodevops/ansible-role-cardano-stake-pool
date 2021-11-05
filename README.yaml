@@ -11,7 +11,7 @@ name: ""
 description: |-
   Add here
 # Canonical GitHub repo
-github_repo: osodevops/some-repo
+github_repo: osodevops/ansible-role-cardano-stake-pool
 
 # How to use this project
 usage: |-
