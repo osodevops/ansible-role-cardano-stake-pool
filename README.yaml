@@ -15,12 +15,6 @@ description: |-
 github_repo: osodevops/ansible-role-cardano-stake-pool
 
 related:
-  - name: "Carano stake pool"
+  - name: "Cardano stake pool"
     description: "Confluent supported Ansible playbooks"
     url: "osodevops/ansible-role-cardano-stake-pool"
-
-# References
-references:
-  - name: "Confluent Platform on Azure"
-    description: 'Terraform Module for deploying best practice HA Confluent Platform on Azure'
-    url: "https://github.com/osodevops/terraform-azure-confluent-platform"
