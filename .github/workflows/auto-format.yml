@@ -32,7 +32,7 @@ jobs:
         shell: bash
         env:
           GITHUB_TOKEN: "${{ secrets.TOPBOT_PUBLIC_REPO_ACCESS_TOKEN }}"
-        run: make BUILD_HARNESS_PATH=/build-harness PACKAGES_PREFER_HOST=true -f /build-harness/templates/Makefile.build-harness pr/readme/host
+        run: cd harness && make BUILD_HARNESS_PATH=/build-harness PACKAGES_PREFER_HOST=true -f /build-harness/templates/Makefile.build-harness pr/readme/host
 
       # Commit changes (if any) to the PR branch
       - name: Commit changes to the PR branch
