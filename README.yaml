@@ -12,12 +12,12 @@ description: |-
   This is a docker wrapper for the Confluent supported ansible playbooks! These supported ansible Playbooks for Confluent Platform offers a simple way to configure and deploy Confluent Platform.
 
 # Canonical GitHub repo
-github_repo: osodevops/docker-cp-ansible
+github_repo: osodevops/ansible-role-cardano-stake-pool
 
 related:
-  - name: "CP Ansible"
+  - name: "Carano stake pool"
     description: "Confluent supported Ansible playbooks"
-    url: "https://github.com/confluentinc/cp-ansible"
+    url: "osodevops/ansible-role-cardano-stake-pool"
 
 # References
 references:
