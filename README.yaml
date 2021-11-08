@@ -5,16 +5,16 @@
 #
 
 # Name of this project
-name: "Docker Confluent Platform Ansible"
+name: "Cardano Stake Pool Ansible role"
 
 # Short description of this project
 description: |-
-  This is a docker wrapper for the Confluent supported ansible playbooks! These supported ansible Playbooks for Confluent Platform offers a simple way to configure and deploy Confluent Platform.
+  Ansible role to perform all the operations of creating, operating and running a Cardano stake pool. The aim of this playbook is to automate the repeatable tasks in a production environment to reduce human error and operational complexity.
 
 # Canonical GitHub repo
 github_repo: osodevops/ansible-role-cardano-stake-pool
 
 related:
-  - name: "Cardano stake pool"
-    description: "Confluent supported Ansible playbooks"
-    url: "osodevops/ansible-role-cardano-stake-pool"
+  - name: "Cardano node installer"
+    description: "Ansible role to install Cardano binaries from source"
+    url: "https://github.com/osodevops/ansible-role-cardano-node"
